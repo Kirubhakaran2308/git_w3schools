@@ -6,3 +6,5 @@ This repository is built step by step in the tutorial
 
 New content is edited and commited to check push
 Push combines fetch and merge
+
+content updated from update-readme branch for pushing branch
