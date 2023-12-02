@@ -1,0 +1,840 @@
+===============================GIT TUTORIAL-W3 SCHOOLS===============================
+
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~
+$ git init
+Initialized empty Git repository in C:/Users/Kirubhakaran G/.git/
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~ (master)
+$ mkdir newProject
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~ (master)
+$ cd newProject
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git init
+Initialized empty Git repository in C:/Users/Kirubhakaran G/newProject/.git/
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ ls
+index.html
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git add index.html
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   index.html
+
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git add --all
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   README.md
+        new file:   bluestyle.css
+        new file:   index.html
+
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git commit -m "First release of Hello World!"
+[master (root-commit) d727852] First release of Hello World!
+ 3 files changed, 26 insertions(+)
+ create mode 100644 README.md
+ create mode 100644 bluestyle.css
+ create mode 100644 index.html
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git status --short
+ M index.html
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ ^C
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git commit -a -m "updated index.html with new line using -a"
+[master 1da7f17] updated index.html with new line using -a
+ 1 file changed, 1 insertion(+)
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git log
+commit 1da7f17ba27f905a146ebf41a7e067d18196f937 (HEAD -> master)
+Author: Kirubhakaran2308 <kirubha2308@gmail.com>
+Date:   Fri Dec 1 18:33:50 2023 +0530
+
+    updated index.html with new line using -a
+
+commit d7278520a036fe2d847450018f737ee854168403
+Author: Kirubhakaran2308 <kirubha2308@gmail.com>
+Date:   Fri Dec 1 10:09:13 2023 +0530
+
+    First release of Hello World!
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git branch hello-world-images
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git branch
+  hello-world-images
+* master
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git checkout hello-world-images
+Switched to branch 'hello-world-images'
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (hello-world-images)
+$ git status
+On branch hello-world-images
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (hello-world-images)
+$ git add --all
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (hello-world-images)
+$ git status
+On branch hello-world-images
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (hello-world-images)
+$ git commit -m "first commit in branch"
+[hello-world-images 6063f4d] first commit in branch
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (hello-world-images)
+$ ls
+README.md  bluestyle.css  index.html
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (hello-world-images)
+$ git checkout master
+Switched to branch 'master'
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ ls
+README.md  bluestyle.css  index.html
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git checkout -b emergency-fix
+Switched to a new branch 'emergency-fix'
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (emergency-fix)
+$ ls
+README.md  bluestyle.css  index.html
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (emergency-fix)
+$ git checkout master
+Switched to branch 'master'
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git merge emergency-fix
+Already up to date.
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git checkout emergency-fix
+Switched to branch 'emergency-fix'
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (emergency-fix)
+$ git add index.html
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (emergency-fix)
+$ git commit -m "index.html changed"
+[emergency-fix 38c8684] index.html changed
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (emergency-fix)
+$ git checkout master
+Switched to branch 'master'
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git merge emergency-fix
+Updating 1da7f17..38c8684
+Fast-forward
+ index.html | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git branch -d emergency-fix
+Deleted branch emergency-fix (was 38c8684).
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git checkout hello-world-images
+Switched to branch 'hello-world-images'
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (hello-world-images)
+$ git add index2.html
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (hello-world-images)
+$ ls
+README.md  bluestyle.css  index.html  index2.html
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (hello-world-images)
+$ git commit -m "new index2.html added"
+[hello-world-images eec85e7] new index2.html added
+ 1 file changed, 20 insertions(+)
+ create mode 100644 index2.html
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (hello-world-images)
+$ git checkout master
+Switched to branch 'master'
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git merge hello-world-images
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+Automatic merge failed; fix conflicts and then commit the result.
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master|MERGING)
+$ git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+        new file:   index2.html
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   index.html
+
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master|MERGING)
+$ git add index.html
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master|MERGING)
+$ git status
+On branch master
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+        new file:   index2.html
+
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master|MERGING)
+$ git commit -m "merged with hello-world-images after fixing conflicts"
+[master cf8927f] merged with hello-world-images after fixing conflicts
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git branch -d hello-world-images
+Deleted branch hello-world-images (was eec85e7).
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git remote add origin https://github.com/Kirubhakaran2308/git_w3schools.git
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git push --set-upstream origin master
+Enumerating objects: 19, done.
+Counting objects: 100% (19/19), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (19/19), done.
+Writing objects: 100% (19/19), 1.78 KiB | 364.00 KiB/s, done.
+Total 19 (delta 10), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (10/10), done.
+To https://github.com/Kirubhakaran2308/git_w3schools.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git fetch origin
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ ^C
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git fetch origin
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git log origin/master
+commit cf8927f4d3b09f01f66904e69317228ec08ab1d1 (HEAD -> master, origin/master)
+Merge: 38c8684 eec85e7
+Author: Kirubhakaran2308 <kirubha2308@gmail.com>
+Date:   Fri Dec 1 21:11:18 2023 +0530
+
+    merged with hello-world-images after fixing conflicts
+
+commit eec85e7b751d5e62430742b856e19d3efe8d58c6
+Author: Kirubhakaran2308 <kirubha2308@gmail.com>
+Date:   Fri Dec 1 21:04:17 2023 +0530
+
+    new index2.html added
+
+commit 38c86841ba14111da46f4621f75ff442d8676cbc
+Author: Kirubhakaran2308 <kirubha2308@gmail.com>
+Date:   Fri Dec 1 21:00:23 2023 +0530
+
+    index.html changed
+
+commit 6063f4d23dda78261b4cb0f397eefce33590aedc
+Author: Kirubhakaran2308 <kirubha2308@gmail.com>
+Date:   Fri Dec 1 20:53:10 2023 +0530
+
+    first commit in branch
+
+commit 1da7f17ba27f905a146ebf41a7e067d18196f937
+Author: Kirubhakaran2308 <kirubha2308@gmail.com>
+Date:   Fri Dec 1 18:33:50 2023 +0530
+
+    updated index.html with new line using -a
+
+commit d7278520a036fe2d847450018f737ee854168403
+Author: Kirubhakaran2308 <kirubha2308@gmail.com>
+Date:   Fri Dec 1 10:09:13 2023 +0530
+
+    First release of Hello World!
+(END)
+commit 38c86841ba14111da46f4621f75ff442d8676cbc
+Author: Kirubhakaran2308 <kirubha2308@gmail.com>
+Date:   Fri Dec 1 21:00:23 2023 +0530
+
+    index.html changed
+
+commit 6063f4d23dda78261b4cb0f397eefce33590aedc
+Author: Kirubhakaran2308 <kirubha2308@gmail.com>
+Date:   Fri Dec 1 20:53:10 2023 +0530
+
+    first commit in branch
+
+commit 1da7f17ba27f905a146ebf41a7e067d18196f937
+Author: Kirubhakaran2308 <kirubha2308@gmail.com>
+Date:   Fri Dec 1 18:33:50 2023 +0530
+
+    updated index.html with new line using -a
+
+commit d7278520a036fe2d847450018f737ee854168403
+Author: Kirubhakaran2308 <kirubha2308@gmail.com>
+Date:   Fri Dec 1 10:09:13 2023 +0530
+
+    First release of Hello World!
+(END)
+commit 38c86841ba14111da46f4621f75ff442d8676cbc
+Author: Kirubhakaran2308 <kirubha2308@gmail.com>
+Date:   Fri Dec 1 21:00:23 2023 +0530
+
+    index.html changed
+
+commit 6063f4d23dda78261b4cb0f397eefce33590aedc
+Author: Kirubhakaran2308 <kirubha2308@gmail.com>
+Date:   Fri Dec 1 20:53:10 2023 +0530
+
+    first commit in branch
+
+commit 1da7f17ba27f905a146ebf41a7e067d18196f937
+Author: Kirubhakaran2308 <kirubha2308@gmail.com>
+Date:   Fri Dec 1 18:33:50 2023 +0530
+
+    updated index.html with new line using -a
+
+commit d7278520a036fe2d847450018f737ee854168403
+Author: Kirubhakaran2308 <kirubha2308@gmail.com>
+Date:   Fri Dec 1 10:09:13 2023 +0530
+
+    First release of Hello World!
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)
+commit cf8927f4d3b09f01f66904e69317228ec08ab1d1 (HEAD -> master, origin/master)
+Merge: 38c8684 eec85e7
+Author: Kirubhakaran2308 <kirubha2308@gmail.com>
+Date:   Fri Dec 1 21:11:18 2023 +0530
+
+    merged with hello-world-images after fixing conflicts
+
+commit eec85e7b751d5e62430742b856e19d3efe8d58c6
+Author: Kirubhakaran2308 <kirubha2308@gmail.com>
+Date:   Fri Dec 1 21:04:17 2023 +0530
+
+    new index2.html added
+
+commit 38c86841ba14111da46f4621f75ff442d8676cbc
+Author: Kirubhakaran2308 <kirubha2308@gmail.com>
+Date:   Fri Dec 1 21:00:23 2023 +0530
+
+    index.html changed
+
+commit 6063f4d23dda78261b4cb0f397eefce33590aedc
+Author: Kirubhakaran2308 <kirubha2308@gmail.com>
+Date:   Fri Dec 1 20:53:10 2023 +0530
+
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        s
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git fetch origin
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 799 bytes | 1024 bytes/s, done.
+From https://github.com/Kirubhakaran2308/git_w3schools
+   cf8927f..c4a8ec5  master     -> origin/master
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git status
+On branch master
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+nothing to commit, working tree clean
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git log
+commit cf8927f4d3b09f01f66904e69317228ec08ab1d1 (HEAD -> master)
+Merge: 38c8684 eec85e7
+Author: Kirubhakaran2308 <kirubha2308@gmail.com>
+Date:   Fri Dec 1 21:11:18 2023 +0530
+
+    merged with hello-world-images after fixing conflicts
+
+commit eec85e7b751d5e62430742b856e19d3efe8d58c6
+Author: Kirubhakaran2308 <kirubha2308@gmail.com>
+Date:   Fri Dec 1 21:04:17 2023 +0530
+
+    new index2.html added
+
+commit 38c86841ba14111da46f4621f75ff442d8676cbc
+Author: Kirubhakaran2308 <kirubha2308@gmail.com>
+Date:   Fri Dec 1 21:00:23 2023 +0530
+
+    index.html changed
+
+commit 6063f4d23dda78261b4cb0f397eefce33590aedc
+Author: Kirubhakaran2308 <kirubha2308@gmail.com>
+Date:   Fri Dec 1 20:53:10 2023 +0530
+
+
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git log origin/master
+commit c4a8ec5033a1be65a8fe5d9128b7620111769ce5 (origin/master)
+Author: Kirubhakaran2308 <90021886+Kirubhakaran2308@users.noreply.github.com>
+Date:   Sat Dec 2 12:07:26 2023 +0530
+
+    Update README.md
+
+commit cf8927f4d3b09f01f66904e69317228ec08ab1d1 (HEAD -> master)
+Merge: 38c8684 eec85e7
+Author: Kirubhakaran2308 <kirubha2308@gmail.com>
+Date:   Fri Dec 1 21:11:18 2023 +0530
+
+    merged with hello-world-images after fixing conflicts
+
+commit eec85e7b751d5e62430742b856e19d3efe8d58c6
+Author: Kirubhakaran2308 <kirubha2308@gmail.com>
+Date:   Fri Dec 1 21:04:17 2023 +0530
+
+    new index2.html added
+
+commit 38c86841ba14111da46f4621f75ff442d8676cbc
+Author: Kirubhakaran2308 <kirubha2308@gmail.com>
+Date:   Fri Dec 1 21:00:23 2023 +0530
+
+
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git diff origin/master
+diff --git a/README.md b/README.md
+index 08fcc9c..4715ab4 100644
+--- a/README.md
++++ b/README.md
+@@ -2,6 +2,4 @@
+ Hello World repository for Git tutorial
+ This is an example repository for the Git tutoial on https://www.w3schools.com
+
+-This repository is built step by step in the tutorial
+-
+-New content is edited and commited to check push
++This repository is built step by step in the tutorial
+\ No newline at end of file
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git merge origin/master
+Updating cf8927f..c4a8ec5
+Fast-forward
+ README.md | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git pull origin
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 782 bytes | 4.00 KiB/s, done.
+From https://github.com/Kirubhakaran2308/git_w3schools
+   c4a8ec5..5a6fd4b  master     -> origin/master
+Updating c4a8ec5..5a6fd4b
+Fast-forward
+ README.md | 1 +
+ 1 file changed, 1 insertion(+)
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git commit -m"Update index.html with new text"
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git commit -a -m "Update index.html with new text"
+[master fc214ff] Update index.html with new text
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git push origin
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 357 bytes | 357.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/Kirubhakaran2308/git_w3schools.git
+   5a6fd4b..fc214ff  master -> master
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git pull
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 712 bytes | 3.00 KiB/s, done.
+From https://github.com/Kirubhakaran2308/git_w3schools
+ * [new branch]      html-skeleton -> origin/html-skeleton
+Already up to date.
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git brach
+git: 'brach' is not a git command. See 'git --help'.
+
+The most similar command is
+        branch
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git brach
+git: 'brach' is not a git command. See 'git --help'.
+
+The most similar command is
+        branch
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git branch
+* master
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git branch -a
+* master
+  remotes/origin/html-skeleton
+  remotes/origin/master
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git branch -r
+  origin/html-skeleton
+  origin/master
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git checkout html-skeleton
+Switched to a new branch 'html-skeleton'
+branch 'html-skeleton' set up to track 'origin/html-skeleton'.
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (html-skeleton)
+$ git pull
+Already up to date.
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (html-skeleton)
+$ git branch
+* html-skeleton
+  master
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (html-skeleton)
+$ git checkout update-readme
+error: pathspec 'update-readme' did not match any file(s) known to git
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (html-skeleton)
+$ git checkout -b update-readme
+Switched to a new branch 'update-readme'
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (update-readme)
+$ git status
+On branch update-readme
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (update-readme)
+$ git add README.md
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (update-readme)
+$ git status
+On branch update-readme
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   README.md
+
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (update-readme)
+$ git restore --staged
+fatal: you must specify path(s) to restore
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (update-readme)
+$ git restore --staged README.md
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (update-readme)
+$ git status
+On branch update-readme
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (update-readme)
+$ git add README.md
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (update-readme)
+$ git status
+On branch update-readme
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   README.md
+
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (update-readme)
+$ git commit -m "updated readme for github branches"
+[update-readme ab12fa2] updated readme for github branches
+ 1 file changed, 2 insertions(+)
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (update-readme)
+$ git push origin update-resume
+error: src refspec update-resume does not match any
+error: failed to push some refs to 'https://github.com/Kirubhakaran2308/git_w3schools.git'
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (update-readme)
+$ git push origin update-readme
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 440 bytes | 220.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'update-readme' on GitHub by visiting:
+remote:      https://github.com/Kirubhakaran2308/git_w3schools/pull/new/update-readme
+remote:
+To https://github.com/Kirubhakaran2308/git_w3schools.git
+ * [new branch]      update-readme -> update-readme
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (update-readme)
+$ git checkout -d html-skeleton
+HEAD is now at 6134d25 Update index.html
+Your branch is up to date with 'origin/html-skeleton'.
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject ((6134d25...))
+$ git status
+HEAD detached at refs/heads/html-skeleton
+nothing to commit, working tree clean
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject ((6134d25...))
+$ git checkout origin/master
+Previous HEAD position was 6134d25 Update index.html
+HEAD is now at fc214ff Update index.html with new text
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject ((fc214ff...))
+$ git status
+HEAD detached at origin/master
+nothing to commit, working tree clean
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject ((fc214ff...))
+$ ^C
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject ((fc214ff...))
+$ git branch -d html-skeleton
+warning: deleting branch 'html-skeleton' that has been merged to
+         'refs/remotes/origin/html-skeleton', but not yet merged to HEAD.
+Deleted branch html-skeleton (was 6134d25).
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject ((fc214ff...))
+$ git push origin --delete html-skeleton
+To https://github.com/Kirubhakaran2308/git_w3schools.git
+ - [deleted]         html-skeleton
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject ((fc214ff...))
+$ git status
+HEAD detached at origin/master
+nothing to commit, working tree clean
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject ((fc214ff...))
+$ ^C
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject ((fc214ff...))
+$ git checkout origin/master
+HEAD is now at fc214ff Update index.html with new text
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject ((fc214ff...))
+$ git status
+HEAD detached at origin/master
+nothing to commit, working tree clean
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject ((fc214ff...))
+$ ^C
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject ((fc214ff...))
+$ git fetch origin
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (1/1), 627 bytes | 10.00 KiB/s, done.
+From https://github.com/Kirubhakaran2308/git_w3schools
+   fc214ff..7701bf1  master     -> origin/master
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject ((fc214ff...))
+$ git checkout master
+Switched to branch 'master'
+Your branch is behind 'origin/master' by 3 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git reset --hard origin/master
+HEAD is now at 7701bf1 Merge pull request #1 from Kirubhakaran2308/update-readme
+
+Kirubhakaran G@DESKTOP-PIEVONH MINGW64 ~/newProject (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
